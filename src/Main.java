@@ -4,7 +4,7 @@ class Main {
     public static void main(String[] args) {
 
         Scanner myObj = new Scanner(System.in);
-
+        System.out.println("Lets begin");
         System.out.println("Enter first value");
         Double x = myObj.nextDouble();
 
