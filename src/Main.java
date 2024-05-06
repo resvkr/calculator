@@ -11,14 +11,14 @@ class Main {
 
         myObj.nextLine();
         System.out.println("Enter operation");
-        String operatoin = myObj.nextLine();
+        String operation = myObj.nextLine();
 
-        if (operatoin.equals("sqrt")) {
+        if (operation.equals("sqrt")) {
             System.out.println("√" + x + " = " + Math.sqrt(x));
         } else {
             System.out.println("Enter second value");
             Double y = myObj.nextDouble();
-            switch (operatoin) {
+            switch (operation) {
                 case "+":
                     System.out.println(x + " + " + y + " = " + (x + y));
                     break;
