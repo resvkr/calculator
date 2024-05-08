@@ -1,5 +1,7 @@
 import java.util.Scanner;
 
+
+
 class Main {
     public static void main(String[] args) {
 
@@ -7,43 +9,30 @@ class Main {
         System.out.println("Lets begin");
         System.out.println("Enter first value");
         Double x = myObj.nextDouble();
-
-
         myObj.nextLine();
         System.out.println("Enter operation");
         String operation = myObj.nextLine();
+        System.out.println("Enter second value");
+        Double y = myObj.nextDouble();
 
-        if (operation.equals("sqrt")) {
-            System.out.println("√" + x + " = " + Math.sqrt(x));
-        } else {
-            System.out.println("Enter second value");
-            Double y = myObj.nextDouble();
-            switch (operation) {
-                case "+":
-                    System.out.println(x + " + " + y + " = " + (x + y));
-                    break;
-                case "-":
-                    System.out.println(x + " - " + y + " = " + (x - y));
-                    break;
-                case "*":
-                    System.out.println(x + "*" + y + " = " + (x * y));
-                    break;
-                case "/":
-                    System.out.println(x + " / " + y + " = " + (x / y));
-                    break;
-                case "%":
-                    System.out.println(x + "%" + y + " = " + (x % y));
-                    break;
-                case "^":
-                    System.out.println(x + "²" + y + " = " + (Math.pow(x, y)));
-                    break;
-                default:
-                    System.out.println("Wrong operation");
+        double result = Calculate(x, y, operation);
 
+        System.out.println("Result:" + result);
 
-            }
+    }
 
+    public static double Calculate(double a, double b, String operation_temp) {
+        double result_temp = 0;
+
+        switch (operation_temp) {
+            case "+" -> result_temp = a + b;
+            case "-" -> result_temp = a - b;
+            case "*" -> result_temp = a * b;
+            case "/" -> result_temp = a / b;
+            case "%" -> result_temp = a % b;
+            case "^" -> result_temp = Math.pow(a, b);
+            default -> System.out.println("Wrong parametr");
         }
-
+        return result_temp;
     }
 }
