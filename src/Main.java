@@ -2,21 +2,29 @@ import java.util.Scanner;
 
 class Main {
     public static void main(String[] args) {
-        Scanner myObj = new Scanner(System.in);
-        System.out.println("Lets begin");
-        System.out.println("Enter first value");
-        double x = myObj.nextDouble();
-        myObj.nextLine();
-        System.out.println("Enter operation");
-        String operation = myObj.nextLine();
-        System.out.println("Enter second value");
-        double y = myObj.nextDouble();
+        int counter = 0;
+        double result = 0;
 
-        Calculator calculator = new Calculator();
+        while (true) {
+            Scanner scanner = new Scanner(System.in);
+            if (counter == 0) {
+                System.out.println("Put value");
+                result = scanner.nextDouble();
+                counter++;
+            }
+            System.out.println("Put operation");
+            String operation = scanner.next();
 
-        double result = calculator.calculate(x, y, operation);
+            if (operation.equals("=")) {
+                break;
+            }
+            System.out.println("Put value");
+            double b = scanner.nextDouble();
+
+            Calculator calculator = new Calculator();
+            result = calculator.calculate(result, b, operation);
+        }
 
         System.out.println("Result:" + result);
-
     }
 }
